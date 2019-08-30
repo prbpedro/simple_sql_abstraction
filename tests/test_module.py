@@ -10,11 +10,12 @@ from tests import test_entity
 
 class ModuleTest(unittest.TestCase):
 
-    def testName(self):
+    def test(self):
         try:
-            data_base_location = ':memory:'
+            data_base_location = 'simple_flask_peewee_db.db'
             dao.ConnectionManager(data_base_location, test_entity.__name__,
-                                  test_entity.DDLCOMMAND, in_memory=True)
+                                  test_entity.DDLCOMMAND, in_memory=False,
+                                  clear_data_base=True)
 
             _dao = dao.BaseDao()
             _dao.delete(test_entity.TestTable)
