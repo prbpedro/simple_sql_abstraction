@@ -232,8 +232,8 @@ class ConnectionManager(Singleton):
                 if clear_data_base:
                     for nome in nomes_entidades:
                         cursor.execute("DROP TABLE IF EXISTS %s" % nome)
-                for create_sql in ddl_command.split(";"):
-                    cursor.execute(create_sql)
+            for create_sql in ddl_command.split(";"):
+                cursor.execute(create_sql)
         conn.commit()
 
     def get_connection(self):
