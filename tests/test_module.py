@@ -12,7 +12,7 @@ class ModuleTest(unittest.TestCase):
 
     def test(self):
         try:
-            data_base_location = 'database.db'
+            data_base_location = 'test_database.db'
             dao.ConnectionManager(data_base_location, test_entity.__name__,
                                   test_entity.DDLCOMMAND, in_memory=False,
                                   clear_data_base=True)
